@@ -59,6 +59,10 @@ public class Owner extends Person {
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
+	@Column(name = "actived")
+	@NotEmpty
+	private String actived;
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
 
@@ -86,11 +90,20 @@ public class Owner extends Person {
 		this.telephone = telephone;
 	}
 
+	public String getActived() {
+		return this.actived;
+	}
+
+	public void setActived(String actived) {
+		this.actived = actived;
+	}
+
+
 	protected Set<Pet> getPetsInternal() {
 		if (this.pets == null) {
 			this.pets = new HashSet<>();
 		}
-		return this.pets;
+		return this.pets; 
 	}
 
 	protected void setPetsInternal(Set<Pet> pets) {
