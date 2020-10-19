@@ -59,12 +59,6 @@ public class Owner extends Person {
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
-
-	@Column(name = "actived")
-	@NotEmpty
-	private String actived;
-
-
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
 
@@ -90,14 +84,6 @@ public class Owner extends Person {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
-	}
-
-	public String getActived() {
-		return this.actived;
-	}
-
-	public void setActived(String actived) {
-		this.actived = actived;
 	}
 
 	protected Set<Pet> getPetsInternal() {
