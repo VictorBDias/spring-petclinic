@@ -98,12 +98,11 @@ public class Owner extends Person {
 		this.is_active = is_active;
 	}
 
-
 	protected Set<Pet> getPetsInternal() {
 		if (this.pets == null) {
 			this.pets = new HashSet<>();
 		}
-		return this.pets; 
+		return this.pets;
 	}
 
 	protected void setPetsInternal(Set<Pet> pets) {
