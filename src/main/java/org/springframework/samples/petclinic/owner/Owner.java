@@ -59,9 +59,9 @@ public class Owner extends Person {
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
-	@Column(name = "actived")
+	@Column(name = "is_active")
 	@NotEmpty
-	private String actived;
+	private String is_active;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
@@ -90,12 +90,12 @@ public class Owner extends Person {
 		this.telephone = telephone;
 	}
 
-	public String getActived() {
-		return this.actived;
+	public String getIs_active() {
+		return this.is_active;
 	}
 
-	public void setActived(String actived) {
-		this.actived = actived;
+	public void setIs_active(String is_active) {
+		this.is_active = is_active;
 	}
 
 
@@ -157,7 +157,7 @@ public class Owner extends Person {
 
 				.append("id", this.getId()).append("new", this.isNew()).append("lastName", this.getLastName())
 				.append("firstName", this.getFirstName()).append("address", this.address).append("city", this.city)
-				.append("telephone", this.telephone).toString();
+				.append("telephone", this.telephone).append("is_active", this.is_active).toString();
 	}
 
 }

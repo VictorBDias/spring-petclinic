@@ -14,7 +14,7 @@
             <th>City</th>
             <th style="width: 120px">Telephone</th>
             <th>Pets</th>
-            <th>Actived</th>
+            <th>is_active</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
               <td th:text="${owner.city}"/>
               <td th:text="${owner.telephone}"/>
               <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>
-              <td th:text="${owner.actived}"/>
+              <td th:text="${owner.is_active}"/>
           </tr>
         </tbody>
     </table>

@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS owners (
   address VARCHAR(255),
   city VARCHAR(80),
   telephone VARCHAR(20),
-  actived VARCHAR(3),
+  is_active VARCHAR(3),
   INDEX(last_name)
 ) engine=InnoDB;
 
